@@ -1,14 +1,22 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Login v-if="boo" msg="Welcome to Your Vue.js App"/>
+  <Home />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from './components/Login.vue'
+import Home from './components/Home.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Login,
+    Home
+  },
+  data() {
+    return {
+      boo: false
+    }
   }
 }
 </script>
@@ -20,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
